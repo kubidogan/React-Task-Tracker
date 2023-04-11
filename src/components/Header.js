@@ -1,7 +1,10 @@
 import PropTypes from "prop-types"
 import Button from "./Button"
 
-const Header = ({ title, onAdd, showAdd, handleToggle }) => {
+const Header = ({ title, onAdd, showAdd }) => {
+  // const onClick = () => {
+  //   console.log("button clicked")
+  // }
   return (
     <header className= "header">
       <h1>{title}</h1>
