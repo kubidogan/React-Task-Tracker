@@ -6,6 +6,7 @@ const Header = ({ title, onAdd, showAdd }) => {
   return (
     <header className= "header">
       <h1>{title}</h1>
+      <p>Make life a little easier</p>
       <Button
         color={showAdd ? 'red' : 'green'}
         text={showAdd ? 'Close' : 'Add'}
