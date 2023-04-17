@@ -18,6 +18,7 @@ body {
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  background-color: #c5c3c3;
 }
 
 .header {
@@ -109,4 +110,14 @@ body {
 footer {
   margin-top: 30px;
   text-align: center;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about a {
+  text-decoration: none;
 }
