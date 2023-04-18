@@ -30,7 +30,7 @@ function TaskDetails() {
   return loading ? (
     <h3>Loading...</h3>
   ) : (
-    <div>
+    <div className="taskdetails">
       <h3>{task.text}</h3>
       <p>{task.day}</p>
       <Button onClick={() => {
