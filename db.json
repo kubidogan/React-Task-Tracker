@@ -15,7 +15,7 @@
     {
       "text": "Dasak",
       "day": "1pm Tuesday 27th April 2023",
-      "reminder": false,
+      "reminder": true,
       "id": 4
     }
   ]
