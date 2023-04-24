@@ -9,15 +9,20 @@ import TaskDetails from "./components/TaskDetails"
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState ([])
+  const [searchTerm, setSearchTerm] = useState('');
+
 
   useEffect(() => {
     const getTasks = async () => {
       const tasksFromServer = await fetchTasks()
-      setTasks(tasksFromServer)
+      const filteredTasks = tasksFromServer.filter((task) =>
+        task.text.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setTasks(filteredTasks)
     }
     getTasks()
 
-  }, [])
+  }, [searchTerm]);
 
   // Fetch Tasks
   const fetchTasks = async () => {
