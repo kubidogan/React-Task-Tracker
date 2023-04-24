@@ -1,12 +1,6 @@
 {
   "tasks": [
     {
-      "text": "Test",
-      "day": "1pm friday",
-      "reminder": true,
-      "id": 2
-    },
-    {
       "text": "Doctors Appointment - Manor Hospital",
       "day": "May 10th 5PM",
       "reminder": true,
