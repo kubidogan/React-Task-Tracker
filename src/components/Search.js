@@ -11,6 +11,7 @@ const Search = ({ onSearch }) => {
   return (
     <div>
       <input
+        className="search"
         type="text"
         placeholder="Search Tasks"
         value={searchTerm}
