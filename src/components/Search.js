@@ -9,7 +9,7 @@ const Search = ({ onSearch }) => {
   };
 
   return (
-    <div>
+    <div className="search">
       <input
         className="search"
         type="text"
