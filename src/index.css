@@ -134,3 +134,9 @@ footer {
   color: red;
   text-align: center;
 }
+
+.search::placeholder {
+  font-family: "Arial", sans-serif;
+  font-size: 10px;
+  font-style: italic;
+}
