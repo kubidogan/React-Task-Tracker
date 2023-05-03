@@ -35,6 +35,7 @@ const Tasks = ({ tasks, onDelete, onToggle }) => {
                   ref={provided.innerRef}
                   {...provided.draggableProps}
                   {...provided.dragHandleProps}
+                  onDoubleClick={() => onToggle(task.id)}
                 >
                   <h3>
                     {task.text}{' '}

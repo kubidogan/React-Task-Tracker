@@ -30,10 +30,11 @@ import { FaTimes, FaBars } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { Draggable } from 'react-beautiful-dnd';
 
-const Task = ({ task, index, onDelete, onToggle }) => {
+const Task = ({ task, index, onDelete}) => {
+
   return (
     <Draggable draggableId={task.id.toString()} index={index}>
-      {(provided, snapshot) => (
+      {(provided) => (
         <div
           className={`task ${task.reminder ? 'reminder' : ''}`}
           ref={provided.innerRef}
