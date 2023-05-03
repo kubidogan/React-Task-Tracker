@@ -1,12 +1,6 @@
 {
   "tasks": [
     {
-      "text": "Doctors Appointment - Manor Hospital",
-      "day": "May 10th 5PM",
-      "reminder": true,
-      "id": 3
-    },
-    {
       "text": "Dasak",
       "day": "1pm Tuesday 27th April 2023",
       "reminder": true,
@@ -17,6 +11,12 @@
       "day": "Friday 5th November 2023 - 1PM",
       "reminder": true,
       "id": 5
+    },
+    {
+      "text": "Test",
+      "day": "1pm",
+      "reminder": false,
+      "id": 6
     }
   ]
 }

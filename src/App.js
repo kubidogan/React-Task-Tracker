@@ -7,6 +7,8 @@ import Footer from "./components/Footer"
 import About from "./components/About"
 import TaskDetails from "./components/TaskDetails"
 import Search from "./components/Search"
+import { DragDropContext } from 'react-beautiful-dnd';
+
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
@@ -82,41 +84,53 @@ function App() {
     {...task, reminder: data.reminder} : task))
   }
 
+  // Handle Drag and Drop
+  const handleDragEnd = (result) => {
+    if (!result.destination) {
+      return;
+    }
+
+    const items = Array.from(tasks);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+
+    setTasks(items);
+  };
+
   return (
     <Router>
       <div className="container">
-        <Header onAdd={() => setShowAddTask(!showAddTask)}
-        showAdd={showAddTask}
-        />
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <>
-              {showAddTask && <AddTask onAdd={addTask} />}
-              <Search onSearch={(value) => setSearchTerm(value)} />
-              {tasks.length > 0 ? (
-              <Tasks
-                tasks={tasks}
-                onDelete={deleteTask}
-                onToggle={toggleReminder}
-              />
-            ) : (
-              "No Task To Show"
-            )}
-            </>
-            }
-          />
-          <Route path='/about' element={<About />}
-          />
-          <Route path='/task/:id' element={<TaskDetails />}
-          />
-        </Routes>
+        <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+        <DragDropContext onDragEnd={handleDragEnd}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  {showAddTask && <AddTask onAdd={addTask} />}
+                  <Search onSearch={(value) => setSearchTerm(value)} />
+                  {tasks.length > 0 ? (
+                    <Tasks
+                      tasks={tasks}
+                      onDelete={deleteTask}
+                      onToggle={toggleReminder}
+                    />
+                  ) : (
+                    "No Tasks to Show"
+                  )}
+                </>
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/task/:id" element={<TaskDetails />} />
+          </Routes>
+        </DragDropContext>
         <Footer />
       </div>
     </Router>
   );
-}
+ }
+
 
 export default App;
 
