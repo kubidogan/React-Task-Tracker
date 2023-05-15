@@ -17,6 +17,12 @@
       "day": "dsds",
       "reminder": false,
       "id": 8
+    },
+    {
+      "text": "hello",
+      "day": "day",
+      "reminder": true,
+      "id": 9
     }
   ]
 }
