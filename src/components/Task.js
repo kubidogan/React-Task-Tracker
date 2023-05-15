@@ -29,7 +29,7 @@
 import { FaTimes, FaBars } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { Draggable } from 'react-beautiful-dnd';
-import { Toggle, ToggleItem } from "@tremor/react";
+
 
 const Task = ({ task, index, onDelete}) => {
 

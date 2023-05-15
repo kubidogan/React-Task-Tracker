@@ -3,7 +3,7 @@
     {
       "text": "Test",
       "day": "1pm",
-      "reminder": true,
+      "reminder": false,
       "id": 6
     },
     {
@@ -11,6 +11,12 @@
       "day": "DSDDD",
       "reminder": true,
       "id": 7
+    },
+    {
+      "text": "hello",
+      "day": "dsds",
+      "reminder": false,
+      "id": 8
     }
   ]
 }
